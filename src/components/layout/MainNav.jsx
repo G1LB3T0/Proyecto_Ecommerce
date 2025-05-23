@@ -30,11 +30,6 @@ const MainNav = () => (
         </li>
       ))}
     </ul>
-    <div className="main-nav__actions">
-      {}
-      {}
-      {}
-    </div>
   </nav>
 );
 
