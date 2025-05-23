@@ -1,0 +1,89 @@
+.tarjeta-producto {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.tarjeta-producto:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+  transform: translateY(-4px);
+}
+
+.tarjeta-producto img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.tarjeta-producto h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2C3E50;
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+.tarjeta-producto .precios {
+  margin: 0.5rem 0 1rem 0;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.tarjeta-producto del {
+  color: #95a5a6;
+  font-size: 0.95rem;
+}
+
+.tarjeta-producto span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2C3E50;
+}
+
+.etiqueta-oferta {
+  background: #e74c3c;
+  color: #fff;
+  font-size: 0.85rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.boton-comprar {
+  background: #B5CBB7;
+  color: #2C3E50;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.boton-comprar:hover {
+  background: #95a5a6;
+  color: #fff;
+}
+
+.boton-comprar.agregado {
+  background: #27ae60;
+  color: #fff;
+} 

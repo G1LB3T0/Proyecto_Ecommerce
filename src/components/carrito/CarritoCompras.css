@@ -1,0 +1,157 @@
+.carrito-compras {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 2rem;
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.carrito-compras h2 {
+  color: #2C3E50;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.carrito-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.carrito-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  position: relative;
+}
+
+.carrito-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.item-detalles {
+  flex: 1;
+}
+
+.item-detalles h3 {
+  color: #2C3E50;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.item-precio {
+  color: #95a5a6;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.controles-cantidad {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.btn-cantidad {
+  background: #B5CBB7;
+  color: #2C3E50;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-cantidad:hover {
+  background: #95a5a6;
+  color: #fff;
+}
+
+.cantidad {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #2C3E50;
+  min-width: 30px;
+  text-align: center;
+}
+
+.subtotal {
+  color: #2C3E50;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+.btn-eliminar {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-eliminar:hover {
+  color: #c0392b;
+  transform: scale(1.1);
+}
+
+.carrito-total {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #f1f1f1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.carrito-total h3 {
+  color: #2C3E50;
+  font-size: 1.3rem;
+}
+
+.btn-pagar {
+  background: #B5CBB7;
+  color: #2C3E50;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-pagar:hover {
+  background: #95a5a6;
+  color: #fff;
+}
+
+.carrito-vacio {
+  text-align: center;
+  padding: 3rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  margin: 2rem auto;
+  max-width: 500px;
+}
+
+.carrito-vacio h2 {
+  color: #2C3E50;
+  margin-bottom: 1rem;
+}
+
+.carrito-vacio p {
+  color: #95a5a6;
+} 
