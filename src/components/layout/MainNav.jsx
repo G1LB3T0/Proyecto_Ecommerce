@@ -31,9 +31,9 @@ const MainNav = () => (
       ))}
     </ul>
     <div className="main-nav__actions">
-      {/* Aquí podrías agregar un botón de búsqueda u otras acciones si las tienes */}
-      {/* <SearchButton /> */}
-      {/* Asegúrate de que CartButton esté renderizado en App.jsx para que siempre esté visible */}
+      {}
+      {}
+      {}
     </div>
   </nav>
 );
