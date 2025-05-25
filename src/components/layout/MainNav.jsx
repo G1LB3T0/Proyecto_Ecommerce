@@ -1,36 +1,28 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import CartButton from './CartButton';
+import { Link } from 'react-router-dom';
+import { useFavoritos } from '../../context/FavoritosContext';
+import './MainNav.css';
 
-const links = [
-  { to: '/', label: 'INICIO' },
-  { to: '/categoria/cover-duvets', label: 'Cover Duvets' },
-  { to: '/categoria/lampara-velas', label: 'Lámpara de velas' },
-  { to: '/categoria/alfombras', label: 'Alfombras lavables' },
-  { to: '/categoria/vajillas', label: 'Vajillas' },
-  { to: '/categoria/accesorios', label: 'Accesorios' },
-  { to: '/categoria/cubiertos', label: 'Cubiertos' },
-  { to: '/categoria/lamparas', label: 'Lámparas' },
-  { to: '/categoria/lentes', label: 'Lentes' },
-  { to: '/categoria/gorras', label: 'Gorras' },
-  { to: '/categoria/liquidaciones', label: 'LIQUIDACIONES', sale: true },
-];
+const MainNav = () => {
+  const { favoritos } = useFavoritos();
 
-const MainNav = () => (
-  <nav className="main-nav">
-    <ul className="main-nav__list">
-      {links.map(link => (
-        <li key={link.to} className={`main-nav__item${link.sale ? ' main-nav__item--sale' : ''}`}>
-          <NavLink
-            to={link.to}
-            className={({ isActive }) => isActive ? 'main-nav__link main-nav__link--active' : 'main-nav__link'}
-          >
-            {link.label}
-          </NavLink>
-        </li>
-      ))}
-    </ul>
-  </nav>
-);
+  return (
+    <nav className="main-nav">
+      <div className="main-nav__logo">
+        <Link to="/">Hogar & Decoración</Link>
+      </div>
+      <div className="main-nav__links">
+        <Link to="/productos">Productos</Link>
+        <Link to="/categoria/ofertas">Ofertas</Link>
+        <Link to="/favoritos" className="main-nav__favoritos">
+          Favoritos
+          {favoritos.length > 0 && (
+            <span className="main-nav__favoritos-badge">{favoritos.length}</span>
+          )}
+        </Link>
+      </div>
+    </nav>
+  );
+};
 
 export default MainNav; 
