@@ -3,7 +3,7 @@
   min-height: calc(100vh - 80px);
   background-color: var(--color-fondo);
 }
-
+ 
 @media (max-width: 768px) {
   .carrito-page {
     padding: 1rem;

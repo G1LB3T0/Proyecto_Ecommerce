@@ -1,17 +1,24 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import ListaProductos from '../components/listados/ListaProductos';
 import productosMock from '../utils/productosMock';
 import './Buscar.css';
 
 const Buscar = () => {
   const { query } = useParams();
-  const terminoBusqueda = decodeURIComponent(query).toLowerCase();
+  const navigate = useNavigate();
+  const terminoBusqueda = decodeURIComponent(query || '').toLowerCase().trim();
+
+  useEffect(() => {
+    if (!terminoBusqueda && window.location.pathname === '/buscar') {
+      navigate('/');
+    }
+  }, [terminoBusqueda, navigate]);
+
+  const normalizeString = (str) => str.normalize('NFD').replace(/\p{Diacritic}/gu, '');
 
   const productosFiltrados = productosMock.filter(producto => 
-    (producto.nombre && producto.nombre.toLowerCase().includes(terminoBusqueda)) ||
-    (producto.descripcion && producto.descripcion.toLowerCase().includes(terminoBusqueda)) ||
-    (producto.categoria && producto.categoria.toLowerCase().includes(terminoBusqueda))
+    producto.nombre && normalizeString(producto.nombre.toLowerCase()).includes(normalizeString(terminoBusqueda))
   );
 
   return (

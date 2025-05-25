@@ -12,6 +12,7 @@ const TarjetaProducto = ({ producto }) => {
 
   const agregarAlCarrito = e => {
     e.preventDefault();
+    e.stopPropagation();
     dispatch({ type: 'AGREGAR_ITEM', payload: { id, nombre, precio, imagen, cantidad: 1 } });
     setAgregado(true);
     setTimeout(() => setAgregado(false), 2000);
@@ -25,10 +26,12 @@ const TarjetaProducto = ({ producto }) => {
 
   const renderRating = r => '★'.repeat(r) + '☆'.repeat(5 - r);
 
+  const mostrarOferta = oferta && oferta.trim() !== '' ? oferta : (precioOriginal && precioOriginal > precio ? 'Oferta' : null);
+
   return (
     <Link to={`/producto/${id}`} className="tarjeta-producto-link">
       <div className="tarjeta-producto">
-        {oferta && <span className="etiqueta-oferta">{oferta}</span>}
+        {mostrarOferta && <span className="etiqueta-oferta">{mostrarOferta}</span>}
         <button
           className={`boton-favorito${esFavorito(id) ? ' activo' : ''}`}
           onClick={handleFavorito}

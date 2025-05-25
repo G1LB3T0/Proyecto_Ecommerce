@@ -24,11 +24,14 @@ export default function DetalleProducto() {
         nombre: producto.nombre,
         precio: producto.precio,
         imagen: producto.imagen,
-        cantidad
+        cantidad: cantidad
       }
     });
     setAgregado(true);
-    setTimeout(() => setAgregado(false), 2000);
+    setTimeout(() => {
+      setAgregado(false);
+      setCantidad(1);
+    }, 2000);
   };
 
   const handleComprarAhora = () => {

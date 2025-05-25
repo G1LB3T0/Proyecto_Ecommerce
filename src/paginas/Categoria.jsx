@@ -13,7 +13,7 @@ const categoriasMap = {
   'lamparas': 'Lámparas',
   'lentes': 'Lentes',
   'gorras': 'Gorras',
-  'liquidaciones': 'LIQUIDACIONES'
+  'ofertas': 'Ofertas Especiales'
 };
 
 const Categoria = () => {
@@ -22,15 +22,23 @@ const Categoria = () => {
 
   let productosFiltrados = productosMock.filter(p => p.categoria === id);
 
-  if (id === 'liquidaciones') {
-    productosFiltrados = productosMock.filter(p => p.oferta);
+  if (id === 'ofertas') {
+    productosFiltrados = productosMock.filter(p => p.oferta && p.oferta !== '');
   }
 
   return (
     <div className="categoria-page">
       <h1 className="categoria-titulo">{nombreCategoria}</h1>
       {productosFiltrados.length > 0 ? (
-        <ListaProductos productos={productosFiltrados} />
+        <>
+          <p className="categoria-descripcion">
+            {id === 'ofertas' 
+              ? 'Encuentra las mejores ofertas y liquidaciones en productos seleccionados'
+              : `Explora nuestra selección de ${nombreCategoria.toLowerCase()}`
+            }
+          </p>
+          <ListaProductos productos={productosFiltrados} />
+        </>
       ) : (
         <div className="mensaje-vacio">No hay productos en esta categoría por el momento.</div>
       )}

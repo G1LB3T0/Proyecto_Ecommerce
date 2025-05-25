@@ -1,0 +1,102 @@
+.filtros {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.filtros-titulo {
+  font-size: 1.2rem;
+  color: #2C3E50;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.filtros-grupo {
+  margin-bottom: 1.5rem;
+}
+
+.filtros-grupo-titulo {
+  font-size: 1rem;
+  color: #2C3E50;
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+}
+
+.filtros-precio {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.filtros-precio input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.filtros-categoria {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filtros-categoria label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.filtros-categoria input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.filtros-ordenar {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #2C3E50;
+  background: white;
+  cursor: pointer;
+}
+
+.filtros-ordenar:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.filtros-limpiar {
+  width: 100%;
+  padding: 0.8rem;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filtros-limpiar:hover {
+  background: #c0392b;
+}
+
+@media (max-width: 768px) {
+  .filtros {
+    padding: 1rem;
+  }
+
+  .filtros-precio {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+} 

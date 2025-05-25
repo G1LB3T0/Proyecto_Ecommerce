@@ -17,7 +17,7 @@ const carritoReducer = (state, action) => {
           ...state,
           items: state.items.map(item =>
             item.id === action.payload.id
-              ? { ...item, cantidad: item.cantidad + 1 }
+              ? { ...item, cantidad: item.cantidad + action.payload.cantidad }
               : item
           )
         };
@@ -25,7 +25,7 @@ const carritoReducer = (state, action) => {
       
       return {
         ...state,
-        items: [...state.items, { ...action.payload, cantidad: 1 }]
+        items: [...state.items, action.payload]
       };
 
     case 'ACTUALIZAR_CANTIDAD':
@@ -45,7 +45,10 @@ const carritoReducer = (state, action) => {
       };
 
     case 'VACIAR_CARRITO':
-      return initialState;
+      return {
+        ...state,
+        items: []
+      };
 
     default:
       return state;

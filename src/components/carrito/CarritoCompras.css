@@ -1,7 +1,7 @@
 .carrito-compras {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  background: #f9f9fb;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(44,62,80,0.08);
   padding: 2rem;
   width: 100%;
   max-width: 800px;
@@ -28,6 +28,14 @@
   background: #f8f9fa;
   border-radius: 8px;
   position: relative;
+  border: 1.5px solid #f0f0f0;
+  box-shadow: 0 2px 12px rgba(44,62,80,0.04);
+  transition: box-shadow 0.2s, border 0.2s;
+}
+
+.carrito-item:hover {
+  box-shadow: 0 6px 24px rgba(44,62,80,0.10);
+  border: 1.5px solid #B5CBB7;
 }
 
 .carrito-item img {
@@ -113,6 +121,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: linear-gradient(90deg, #f5f3f2 60%, #eaf6f6 100%);
+  border: 1.5px solid #f0f0f0;
+  box-shadow: 0 2px 12px rgba(44,62,80,0.04);
+  margin-bottom: 0.5rem;
 }
 
 .carrito-total h3 {
@@ -130,6 +142,7 @@
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
+  margin-top: 0.5rem;
 }
 
 .btn-pagar:hover {
@@ -154,4 +167,31 @@
 
 .carrito-vacio p {
   color: #95a5a6;
+}
+
+.btn-vaciar {
+  display: inline-block;
+  width: auto;
+  min-width: 120px;
+  max-width: 180px;
+  margin: 1.5rem 1rem 0 0;
+  padding: 0.6rem 1.2rem;
+  background: #fff0f0;
+  color: #e74c3c;
+  border: 1.5px solid #e74c3c;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  box-shadow: 0 1px 4px rgba(231,76,60,0.07);
+  letter-spacing: 0.5px;
+}
+
+.btn-vaciar:hover {
+  background: #e74c3c;
+  color: #fff;
+  border-color: #e74c3c;
+  transform: translateY(-1px) scale(1.03);
 } 

@@ -7,6 +7,7 @@ const NavPrincipal = () => {
   const navigate = useNavigate();
 
   const categorias = [
+    { nombre: 'Ofertas', link: '/categoria/ofertas' },
     { nombre: 'Cover Duvets', link: '/categoria/cover-duvets' },
     { nombre: 'Vajillas', link: '/categoria/vajillas' },
     { nombre: 'Cubiertos', link: '/categoria/cubiertos' },
@@ -51,7 +52,7 @@ const NavPrincipal = () => {
             </Link>
           ))}
         </div>
-      </div>
+    </div>
     </nav>
   );
 };

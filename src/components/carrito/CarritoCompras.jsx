@@ -38,7 +38,7 @@ const CarritoCompras = () => {
             <img src={item.imagen} alt={item.nombre} />
             <div className="item-detalles">
               <h3>{item.nombre}</h3>
-              <p className="item-precio">{item.precio} GTQ</p>
+              <p className="item-precio">{item.precio.toLocaleString('es-GT', { style: 'currency', currency: 'GTQ' })}</p>
               <div className="controles-cantidad">
                 <button 
                   onClick={() => actualizarCantidad(item.id, item.cantidad - 1)}
@@ -54,7 +54,7 @@ const CarritoCompras = () => {
                   +
                 </button>
               </div>
-              <p className="subtotal">Subtotal: {item.precio * item.cantidad} GTQ</p>
+              <p className="subtotal">Subtotal: { (item.precio * item.cantidad).toLocaleString('es-GT', { style: 'currency', currency: 'GTQ' }) }</p>
             </div>
             <button 
               onClick={() => eliminarItem(item.id)}
@@ -66,9 +66,21 @@ const CarritoCompras = () => {
         ))}
       </div>
       <div className="carrito-total">
-        <h3>Total: {calcularTotal()} GTQ</h3>
-        <button className="btn-pagar">Proceder al Pago</button>
+        <span>Total:</span>
+        <span>{calcularTotal().toLocaleString('es-GT', { style: 'currency', currency: 'GTQ' })}</span>
       </div>
+      <button 
+        className="btn-vaciar"
+        onClick={() => dispatch({ type: 'VACIAR_CARRITO' })}
+      >
+        Vaciar carrito
+      </button>
+      <button 
+        className="btn-pagar"
+        onClick={() => alert('¡Gracias por tu compra!')}
+      >
+        Proceder al Pago
+      </button>
     </div>
   );
 };

@@ -10,6 +10,10 @@ const CartButton = () => {
     return state.items.reduce((total, item) => total + (item.precio * item.cantidad), 0);
   };
 
+  const calcularCantidadTotal = () => {
+    return state.items.reduce((total, item) => total + item.cantidad, 0);
+  };
+
   const handleCartClick = () => {
     navigate('/carrito');
   };
@@ -19,12 +23,12 @@ const CartButton = () => {
       <div className="cart-icon">
         🛒
         {state.items.length > 0 && (
-          <span className="cart-count">{state.items.length}</span>
+          <span className="cart-count">{calcularCantidadTotal()}</span>
         )}
       </div>
       <div className="cart-total">
         {state.items.length > 0 ? (
-          <span>{calcularTotal().toFixed(2)} GTQ</span>
+          <span>{calcularTotal().toLocaleString('es-GT', { style: 'currency', currency: 'GTQ' })}</span>
         ) : (
           <span>Carrito vacío</span>
         )}
