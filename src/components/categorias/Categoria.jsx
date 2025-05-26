@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
-import ListaProductos from '../components/listados/ListaProductos';
-import productosMock from '../utils/productosMock';
+import ListaProductos from '../listados/ListaProductos';
+import productosMock from '../../utils/productosMock';
 import './Categoria.css';
 
 const categoriasMap = {
@@ -20,11 +20,14 @@ const Categoria = () => {
   const { id } = useParams();
   const nombreCategoria = categoriasMap[id] || id;
 
-  let productosFiltrados = productosMock.filter(p => p.categoria === id);
-
-  if (id === 'ofertas') {
-    productosFiltrados = productosMock.filter(p => p.oferta && p.oferta !== '');
-  }
+  let productosFiltrados = productosMock.filter(p => {
+    // Si es la categoría de ofertas, filtrar por productos con oferta
+    if (id === 'ofertas') {
+      return p.oferta && p.oferta !== '';
+    }
+    // Para otras categorías, filtrar por la categoría exacta
+    return p.categoria === id;
+  });
 
   return (
     <div className="categoria-page">

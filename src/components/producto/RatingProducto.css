@@ -1,0 +1,70 @@
+.rating-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.rating-oficial,
+.rating-usuario {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.rating-label {
+  font-size: 1rem;
+  color: #4a5568;
+  min-width: 120px;
+  font-weight: 500;
+}
+
+.estrellas-rating {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.estrellas-rating.interactivo {
+  cursor: pointer;
+}
+
+.estrella {
+  font-size: 1.5rem;
+  color: #cbd5e0;
+  transition: all 0.2s;
+}
+
+.estrella.activa {
+  color: #f6ad55;
+  transform: scale(1.1);
+}
+
+.estrellas-rating.interactivo .estrella:hover {
+  transform: scale(1.2);
+}
+
+.rating-valor {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4a5568;
+  min-width: 40px;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .rating-container {
+    padding: 0.75rem;
+  }
+
+  .rating-label {
+    font-size: 0.9rem;
+    min-width: 100px;
+  }
+
+  .estrella {
+    font-size: 1.3rem;
+  }
+} 

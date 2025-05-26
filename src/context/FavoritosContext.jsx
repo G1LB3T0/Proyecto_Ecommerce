@@ -63,7 +63,11 @@ export const FavoritosProvider = ({ children }) => {
   };
 
   return (
-    <FavoritosContext.Provider value={{ favoritos: state.favoritos, toggleFavorito, esFavorito }}>
+    <FavoritosContext.Provider value={{ 
+      favoritos: state.favoritos, 
+      toggleFavorito, 
+      esFavorito
+    }}>
       {children}
     </FavoritosContext.Provider>
   );

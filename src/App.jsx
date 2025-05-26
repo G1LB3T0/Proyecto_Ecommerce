@@ -7,10 +7,9 @@ import CartButton from './components/carrito/CartButton';
 import Home from './paginas/Home';
 import Productos from './paginas/Productos';
 import DetalleProducto from './paginas/DetalleProducto';
-import Categoria from './paginas/Categoria';
 import Carrito from './paginas/Carrito';
-import Buscar from './paginas/Buscar';
-import Favoritos from './paginas/Favoritos';
+import Buscar from './components/busqueda/Buscar';
+import Categoria from './components/categorias/Categoria';
 import './App.css';
 
 export default function App() {
@@ -25,10 +24,9 @@ export default function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/productos" element={<Productos />} />
                 <Route path="/producto/:id" element={<DetalleProducto />} />
-                <Route path="/categoria/:id" element={<Categoria />} />
                 <Route path="/carrito" element={<Carrito />} />
                 <Route path="/buscar/:query" element={<Buscar />} />
-                <Route path="/favoritos" element={<Favoritos />} />
+                <Route path="/categoria/:id" element={<Categoria />} />
               </Routes>
             </main>
             <CartButton />

@@ -287,4 +287,5 @@ const productos = [
   }
 ];
 
+export { productos as productosMock };
 export default productos;

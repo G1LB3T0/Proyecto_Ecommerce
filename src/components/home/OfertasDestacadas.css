@@ -1,0 +1,22 @@
+.home__ofertas {
+  padding: 2rem 0;
+  background-color: #f8f9fa;
+}
+
+.home__ofertas-titulo {
+  text-align: center;
+  font-size: 2rem;
+  color: #2C3E50;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .home__ofertas {
+    padding: 1.5rem 0;
+  }
+  
+  .home__ofertas-titulo {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+} 

@@ -2,7 +2,7 @@
   padding: 2rem 1rem;
   max-width: 1400px;
   margin: 0 auto;
-  background: #f5f3f2;
+  background-color: #ffffff;
   min-height: 100vh;
 }
 
@@ -80,28 +80,15 @@
 }
 
 .home__ofertas-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin-bottom: 2rem;
   padding: 0 2rem;
+  text-align: center;
 }
 
 .home__ofertas-header h2 {
   font-size: 2rem;
   color: #2C3E50;
   margin: 0;
-}
-
-.home__ofertas-ver-todo {
-  color: #3498db;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s;
-}
-
-.home__ofertas-ver-todo:hover {
-  color: #2980b9;
 }
 
 /* Sección de categorías */
@@ -211,8 +198,6 @@
   }
 
   .home__ofertas-header {
-    flex-direction: column;
-    gap: 1rem;
     text-align: center;
   }
 

@@ -1,40 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import React from 'react';
+import { useBusqueda } from './useBusqueda';
 import './BarraBusqueda.css';
 
 const BarraBusqueda = () => {
-  const [busqueda, setBusqueda] = useState('');
-  const navigate = useNavigate();
-  const location = useLocation();
-  const timeoutRef = useRef(null);
-
-  useEffect(() => {
-    if (location.pathname.startsWith('/producto/')) {
-      setBusqueda('');
-    }
-  }, [location.pathname]);
-
-  useEffect(() => {
-    if (busqueda.trim() === '') return;
-    
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-
-    timeoutRef.current = setTimeout(() => {
-      navigate(`/buscar/${encodeURIComponent(busqueda.trim())}`);
-    }, 100);
-
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
-  }, [busqueda, navigate]);
-
-  const handleChange = (e) => {
-    setBusqueda(e.target.value);
-  };
+  const { busqueda, setBusqueda } = useBusqueda();
 
   return (
     <form className="barra-busqueda" onSubmit={e => e.preventDefault()}>
@@ -42,7 +11,7 @@ const BarraBusqueda = () => {
         type="search"
         placeholder="Buscar productos..."
         value={busqueda}
-        onChange={handleChange}
+        onChange={e => setBusqueda(e.target.value)}
         className="barra-busqueda__input"
       />
     </form>

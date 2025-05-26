@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import ListaProductos from '../components/listados/ListaProductos';
-import productosMock from '../utils/productosMock';
+import ListaProductos from '../listados/ListaProductos';
+import productosMock from '../../utils/productosMock';
 import './Buscar.css';
 
 const Buscar = () => {
