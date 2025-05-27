@@ -5,11 +5,17 @@ import { validarLimiteCompra } from '../utils/carritoUtils';
 export const useCarritoActions = () => {
   const { state, dispatch } = useCarrito();
 
-  const calcularTotal = () => state.items.reduce((total, item) => total + (item.precio * item.cantidad), 0);
+  const calcularTotal = useMemo(() => {
+    return state.items.reduce((total, item) => total + (item.precio * item.cantidad), 0);
+  }, [state.items]);
+
+  const encontrarItem = useMemo(() => {
+    return (id) => state.items.find(item => item.id === id);
+  }, [state.items]);
 
   const agregarItem = (item) => {
-    const itemExistente = state.items.find(i => i.id === item.id);
-    const nuevoTotal = calcularTotal() + (item.precio * item.cantidad);
+    const itemExistente = encontrarItem(item.id);
+    const nuevoTotal = calcularTotal + (item.precio * item.cantidad);
     if (validarLimiteCompra(nuevoTotal)) {
       dispatch({ type: 'AGREGAR_ITEM', payload: item });
       return true;
@@ -22,15 +28,15 @@ export const useCarritoActions = () => {
       dispatch({ type: 'ELIMINAR_ITEM', payload: id });
       return;
     }
-    const item = state.items.find(item => item.id === id);
-    const nuevoTotal = calcularTotal() - (item.precio * item.cantidad) + (item.precio * cantidad);
+    const item = encontrarItem(id);
+    const nuevoTotal = calcularTotal - (item.precio * item.cantidad) + (item.precio * cantidad);
     if (validarLimiteCompra(nuevoTotal)) {
       dispatch({ type: 'ACTUALIZAR_CANTIDAD', payload: { id, cantidad } });
     }
   };
 
   const handlePagar = () => {
-    if (validarLimiteCompra(calcularTotal())) {
+    if (validarLimiteCompra(calcularTotal)) {
       alert('¡Gracias por tu compra!');
     }
   };

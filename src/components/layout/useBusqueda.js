@@ -22,7 +22,7 @@ export const useBusqueda = () => {
 
     timeoutRef.current = setTimeout(() => {
       navigate(`/buscar/${encodeURIComponent(busqueda.trim())}`);
-    }, 100);
+    }, 300);
 
     return () => {
       if (timeoutRef.current) {
