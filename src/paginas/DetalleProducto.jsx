@@ -43,8 +43,7 @@ export default function DetalleProducto() {
         ? prevCantidad + 1 
         : prevCantidad - 1;
       
-      // Asegurarse de que la cantidad esté entre 1 y el stock disponible
-      return Math.min(Math.max(1, nuevaCantidad), producto.stock || 10);
+      return Math.min(Math.max(1, nuevaCantidad), 9);
     });
   };
 
@@ -132,7 +131,7 @@ export default function DetalleProducto() {
               <span>{cantidad}</span>
               <button 
                 onClick={() => handleCantidad('sumar')}
-                disabled={cantidad >= (producto.stock || 10)}
+                disabled={cantidad >= 9}
               >
                 +
               </button>

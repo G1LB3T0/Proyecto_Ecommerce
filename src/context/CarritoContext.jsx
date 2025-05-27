@@ -7,20 +7,32 @@ const initialState = {
   total: 0
 };
 
+const MAX_CANTIDAD_POR_PRODUCTO = 9;
+
 const carritoReducer = (state, action) => {
   switch (action.type) {
     case 'AGREGAR_ITEM':
       const itemExistente = state.items.find(item => item.id === action.payload.id);
       
       if (itemExistente) {
+        const nuevaCantidad = itemExistente.cantidad + action.payload.cantidad;
+        if (nuevaCantidad > MAX_CANTIDAD_POR_PRODUCTO) {
+          alert(`No puedes agregar más de ${MAX_CANTIDAD_POR_PRODUCTO} unidades del mismo producto`);
+          return state;
+        }
         return {
           ...state,
           items: state.items.map(item =>
             item.id === action.payload.id
-              ? { ...item, cantidad: item.cantidad + action.payload.cantidad }
+              ? { ...item, cantidad: nuevaCantidad }
               : item
           )
         };
+      }
+      
+      if (action.payload.cantidad > MAX_CANTIDAD_POR_PRODUCTO) {
+        alert(`No puedes agregar más de ${MAX_CANTIDAD_POR_PRODUCTO} unidades del mismo producto`);
+        return state;
       }
       
       return {
@@ -29,6 +41,10 @@ const carritoReducer = (state, action) => {
       };
 
     case 'ACTUALIZAR_CANTIDAD':
+      if (action.payload.cantidad > MAX_CANTIDAD_POR_PRODUCTO) {
+        alert(`No puedes agregar más de ${MAX_CANTIDAD_POR_PRODUCTO} unidades del mismo producto`);
+        return state;
+      }
       return {
         ...state,
         items: state.items.map(item =>

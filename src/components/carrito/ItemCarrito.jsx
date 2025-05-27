@@ -8,9 +8,21 @@ const ItemCarrito = ({ item, onActualizarCantidad, onEliminar }) => (
       <h3>{item.nombre}</h3>
       <p className="item-precio">{item.precio.toLocaleString('es-GT', { style: 'currency', currency: 'GTQ' })}</p>
       <div className="controles-cantidad">
-        <button onClick={() => onActualizarCantidad(item.id, item.cantidad - 1)} className="btn-cantidad">-</button>
+        <button 
+          onClick={() => onActualizarCantidad(item.id, item.cantidad - 1)} 
+          className="btn-cantidad"
+          disabled={item.cantidad <= 1}
+        >
+          -
+        </button>
         <span className="cantidad">{item.cantidad}</span>
-        <button onClick={() => onActualizarCantidad(item.id, item.cantidad + 1)} className="btn-cantidad">+</button>
+        <button 
+          onClick={() => onActualizarCantidad(item.id, item.cantidad + 1)} 
+          className="btn-cantidad"
+          disabled={item.cantidad >= 9}
+        >
+          +
+        </button>
       </div>
       <p className="subtotal">Subtotal: {(item.precio * item.cantidad).toLocaleString('es-GT', { style: 'currency', currency: 'GTQ' })}</p>
     </div>
