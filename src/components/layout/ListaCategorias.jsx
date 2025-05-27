@@ -17,5 +17,4 @@ const ListaCategorias = () => (
     ))}
   </div>
 );
-
 export default ListaCategorias; 

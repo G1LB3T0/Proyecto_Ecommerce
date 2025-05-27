@@ -1,18 +1,10 @@
-import { useCarrito } from '../../context/CarritoContext';
+import { useCartCalculations } from './hooks/useCartCalculations';
 import { useNavigate } from 'react-router-dom';
 import './CartButton.css';
 
 const CartButton = () => {
-  const { state } = useCarrito();
+  const { total, cantidadTotal, items } = useCartCalculations();
   const navigate = useNavigate();
-
-  const calcularTotal = () => {
-    return state.items.reduce((total, item) => total + (item.precio * item.cantidad), 0);
-  };
-
-  const calcularCantidadTotal = () => {
-    return state.items.reduce((total, item) => total + item.cantidad, 0);
-  };
 
   const handleCartClick = () => {
     navigate('/carrito');
@@ -22,13 +14,13 @@ const CartButton = () => {
     <div className="cart-button" onClick={handleCartClick}>
       <div className="cart-icon">
         🛒
-        {state.items.length > 0 && (
-          <span className="cart-count">{calcularCantidadTotal()}</span>
+        {items.length > 0 && (
+          <span className="cart-count">{cantidadTotal}</span>
         )}
       </div>
       <div className="cart-total">
-        {state.items.length > 0 ? (
-          <span>{calcularTotal().toLocaleString('es-GT', { style: 'currency', currency: 'GTQ' })}</span>
+        {items.length > 0 ? (
+          <span>{total.toLocaleString('es-GT', { style: 'currency', currency: 'GTQ' })}</span>
         ) : (
           <span>Carrito vacío</span>
         )}

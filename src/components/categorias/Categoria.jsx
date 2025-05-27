@@ -19,15 +19,9 @@ const categoriasMap = {
 const Categoria = () => {
   const { id } = useParams();
   const nombreCategoria = categoriasMap[id] || id;
-
-  let productosFiltrados = productosMock.filter(p => {
-    // Si es la categoría de ofertas, filtrar por productos con oferta
-    if (id === 'ofertas') {
-      return p.oferta && p.oferta !== '';
-    }
-    // Para otras categorías, filtrar por la categoría exacta
-    return p.categoria === id;
-  });
+  const productosFiltrados = productosMock.filter(p => 
+    id === 'ofertas' ? p.oferta && p.oferta !== '' : p.categoria === id
+  );
 
   return (
     <div className="categoria-page">
