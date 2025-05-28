@@ -8,7 +8,7 @@ const historialReducer = (state, action) => {
       return [
         action.payload,
         ...state.filter(item => item.id !== action.payload.id)
-      ].slice(0, 10); // Mantener solo las últimas 10 visitas
+      ].slice(0, 10); 
     default:
       return state;
   }

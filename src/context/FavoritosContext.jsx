@@ -46,7 +46,6 @@ export const FavoritosProvider = ({ children }) => {
     historial: []
   });
 
-  // Cargar favoritos del localStorage al iniciar
   useEffect(() => {
     const favoritosGuardados = localStorage.getItem('favoritos');
     if (favoritosGuardados) {
@@ -57,7 +56,6 @@ export const FavoritosProvider = ({ children }) => {
     }
   }, []);
 
-  // Guardar favoritos en localStorage cuando cambien
   useEffect(() => {
     localStorage.setItem('favoritos', JSON.stringify(state.favoritos));
   }, [state.favoritos]);

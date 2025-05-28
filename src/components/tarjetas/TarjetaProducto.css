@@ -119,6 +119,78 @@
   fill: #e74c3c;
 }
 
+.historial-tooltip {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1000;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  padding: 1rem;
+  min-width: 280px;
+  right: 0;
+  top: calc(100% + 15px);
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.favoritos-container:hover .historial-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.historial-tooltip::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid white;
+}
+
+.historial-tooltip h4 {
+  color: #2C3E50;
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 0.5rem;
+}
+
+.historial-tooltip ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.historial-tooltip li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.historial-tooltip li:last-child {
+  border-bottom: none;
+}
+
+.historial-tooltip .fecha {
+  font-size: 0.85rem;
+  color: #95a5a6;
+  font-weight: 500;
+}
+
+.historial-tooltip .accion {
+  font-size: 0.95rem;
+  color: #2C3E50;
+  font-weight: 500;
+}
+
 .contador-favoritos {
   background: rgba(255, 255, 255, 0.9);
   color: #e53e3e;

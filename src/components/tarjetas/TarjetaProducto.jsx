@@ -31,15 +31,15 @@ const TarjetaProducto = ({ producto }) => {
   const mostrarOferta = oferta?.trim() || (precioOriginal > precio ? 'Oferta' : null);
 
   return (
-    <Link to={`/producto/${id}`} className="tarjeta-producto-link">
-      <div className="tarjeta-producto">
-        {mostrarOferta && <span className="etiqueta-oferta">{mostrarOferta}</span>}
-        <BotonFavorito 
-          esFavorito={esFavorito(id)} 
-          onClick={handleFavorito}
-          totalFavoritos={favoritos.length}
-          historial={historial}
-        />
+    <div className="tarjeta-producto">
+      {mostrarOferta && <span className="etiqueta-oferta">{mostrarOferta}</span>}
+      <BotonFavorito 
+        esFavorito={esFavorito(id)} 
+        onClick={handleFavorito}
+        totalFavoritos={favoritos.length}
+        historial={historial}
+      />
+      <Link to={`/producto/${id}`} className="tarjeta-producto-link">
         <img src={imagen} alt={nombre} />
         <InfoProducto 
           nombre={nombre}
@@ -47,13 +47,13 @@ const TarjetaProducto = ({ producto }) => {
           precioOriginal={precioOriginal}
           rating={rating}
         />
-        <div className="tarjeta-producto__botones">
-          <button className={`boton-comprar${agregado ? ' agregado' : ''}`} onClick={agregarAlCarrito}>
-            {agregado ? '¡Agregado!' : 'Agregar al carrito'}
-          </button>
-        </div>
+      </Link>
+      <div className="tarjeta-producto__botones">
+        <button className={`boton-comprar${agregado ? ' agregado' : ''}`} onClick={agregarAlCarrito}>
+          {agregado ? '¡Agregado!' : 'Agregar al carrito'}
+        </button>
       </div>
-    </Link>
+    </div>
   );
 };
 
