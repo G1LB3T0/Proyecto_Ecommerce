@@ -2,13 +2,13 @@
 
 **Una interfaz de ecommerce construida con React y Vite**, enfocada en explorar productos de hogar y decoración mediante componentes reutilizables y navegación con React Router.
 
-**[Abrir la demo en Vercel ↗](https://proyecto-ecommerce-git-master-g1lb3t0s-projects.vercel.app/)** · [Volver a mi perfil](https://github.com/G1LB3T0)
+**[Demo en Vercel](https://proyecto-ecommerce-git-master-g1lb3t0s-projects.vercel.app/)** · [Perfil profesional](https://github.com/G1LB3T0)
 
-## Explora la demo
+## Funcionalidad
 
-1. Recorre las categorías desde la página principal.
-2. Abre el catálogo y visita una ficha de producto.
-3. Observa las tarjetas, los precios, las ofertas y los controles de la interfaz.
+- Navegación por categorías y catálogo de productos.
+- Fichas de producto y tarjetas con precios y ofertas.
+- Controles de búsqueda, favoritos y carrito.
 
 La página presenta un catálogo de hogar y decoración, categorías, fichas de producto y controles de búsqueda, favoritos y carrito. El alcance de este portafolio es el **frontend**; no se presenta como una plataforma de pagos o un sistema de comercio en producción.
 
@@ -42,6 +42,6 @@ Abre la dirección que Vite muestre en la terminal.
 | `npm run storybook` | Entorno de documentación de componentes |
 | `npm run build-storybook` | Compilación de Storybook |
 
-## Qué muestra este proyecto
+## Alcance técnico
 
 Desarrollo de interfaces con React, composición de componentes, navegación y publicación de un frontend en Vercel. La demo permite conocer el resultado visual antes de revisar el código.
