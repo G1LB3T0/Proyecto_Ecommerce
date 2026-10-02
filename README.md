@@ -1,12 +1,47 @@
-# React + Vite
+# Hogar & Decoración · Ecommerce Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Una interfaz de ecommerce construida con React y Vite**, enfocada en explorar productos de hogar y decoración mediante componentes reutilizables y navegación con React Router.
 
-Currently, two official plugins are available:
+**[Abrir la demo en Vercel ↗](https://proyecto-ecommerce-git-master-g1lb3t0s-projects.vercel.app/)** · [Volver a mi perfil](https://github.com/G1LB3T0)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Explora la demo
 
-## Expanding the ESLint configuration
+1. Recorre las categorías desde la página principal.
+2. Abre el catálogo y visita una ficha de producto.
+3. Observa las tarjetas, los precios, las ofertas y los controles de la interfaz.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+La página presenta un catálogo de hogar y decoración, categorías, fichas de producto y controles de búsqueda, favoritos y carrito. El alcance de este portafolio es el **frontend**; no se presenta como una plataforma de pagos o un sistema de comercio en producción.
+
+## Stack
+
+React · Vite · React Router · HTML/CSS · Bootstrap
+
+El repositorio también declara herramientas de Storybook, ESLint y Vitest. Consulta [`package.json`](package.json) para ver la configuración disponible.
+
+## Ejecutar localmente
+
+Con Node.js y npm instalados:
+
+```bash
+git clone https://github.com/G1LB3T0/Proyecto_Ecommerce.git
+cd Proyecto_Ecommerce
+npm install
+npm run dev
+```
+
+Abre la dirección que Vite muestre en la terminal.
+
+## Comandos disponibles
+
+| Comando | Propósito |
+| :--- | :--- |
+| `npm run dev` | Servidor de desarrollo |
+| `npm run build` | Compilación del frontend |
+| `npm run preview` | Vista previa de la compilación |
+| `npm run lint` | Revisión estática con ESLint |
+| `npm run storybook` | Entorno de documentación de componentes |
+| `npm run build-storybook` | Compilación de Storybook |
+
+## Qué muestra este proyecto
+
+Desarrollo de interfaces con React, composición de componentes, navegación y publicación de un frontend en Vercel. La demo permite conocer el resultado visual antes de revisar el código.
